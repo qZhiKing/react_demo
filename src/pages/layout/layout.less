@@ -8,10 +8,29 @@
     display: flex;
     align-items: center;
     background-color: #ffffff;
-    box-shadow: 0 2px 8px #f2f3f5;
+    box-shadow: 0 2px 8px @maingray;
+    .head-group {
+      display: flex;
+      .head-group-item {
+        display: block;
+        margin: 0 20px;
+        font-size: 18px;
+        color: @fontColor;
+        border-bottom: 4px solid transparent;
+      }
+      .head-group-item.active {
+        color: @fontActive;
+      }
+      .head-group-item:hover {
+        color: @fontColor !important;
+        border-color: @fontActive;
+      }
+    }
   }
   .content {
-    background-color: #f2f3f5;
+    background-color: @maingray;
     overflow-y: auto;
+    font-size: 16px;
+    color: @fontColor;
   }
 }
