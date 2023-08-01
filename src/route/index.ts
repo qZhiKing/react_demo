@@ -11,7 +11,7 @@ import Content from "@/pages/content/content";
 
 const routes = [
   {
-    path: "/",
+    path: "/home",
     component: Home,
   },
   {

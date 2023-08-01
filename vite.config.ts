@@ -2,7 +2,7 @@
  * @Description:
  * @Author: qingZhiKing
  * @Date: 2023-05-24 10:42:19
- * @LastEditTime: 2023-06-15 15:12:06
+ * @LastEditTime: 2023-07-31 10:37:20
  * @LastEditors: qingZhiKing
  */
 import { defineConfig } from "vite";
@@ -18,6 +18,15 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, ".", "src"),
       "@public": resolve(__dirname, ".", "public"),
+    },
+  },
+  css: {
+    // css预处理器
+    preprocessorOptions: {
+      less: {
+        charset: false,
+        additionalData: '@import "./src/style/less.global.less";',
+      },
     },
   },
   server: {

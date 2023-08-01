@@ -2,23 +2,21 @@
  * @Description:
  * @Author: qingZhiKing
  * @Date: 2023-05-24 10:42:19
- * @LastEditTime: 2023-06-15 15:24:34
+ * @LastEditTime: 2023-08-01 11:56:40
  * @LastEditors: qingZhiKing
  */
+import { Route, Routes } from "react-router-dom";
+import LayoutHTML from "./pages/layout/layout";
+import NotFound from "./pages/NotFound/notFound";
 import "./App.css";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
-import routes from "./route/index.ts";
 function App() {
   return (
-    <Router>
+    <>
       <Routes>
-        {routes.map((item, key) => {
-          return (
-            <Route key={key} path={item.path} element={<item.component />} />
-          );
-        })}
+        <Route path="*" element={<LayoutHTML />}></Route>
+        <Route path="/404" element={<NotFound />}></Route>
       </Routes>
-    </Router>
+    </>
   );
 }
 
