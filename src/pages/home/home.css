@@ -1,0 +1,16 @@
+.main {
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.main .left-fixed-tab {
+  width: 200px;
+}
+.main .center-container {
+  width: 720px;
+}
+.main .right-other {
+  width: 260px;
+}
