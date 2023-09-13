@@ -2,7 +2,7 @@
  * @Description:
  * @Author: qingZhiKing
  * @Date: 2023-08-01 11:28:23
- * @LastEditTime: 2023-09-07 14:50:36
+ * @LastEditTime: 2023-09-12 15:19:26
  * @LastEditors: qingZhiKing
  */
 import { Layout } from "antd";
@@ -11,7 +11,7 @@ import routes from "@/route";
 import "./layout.less";
 
 export default function LayoutHTML() {
-  const { Header, Footer, Content } = Layout;
+  const { Header, Content } = Layout;
   return (
     <>
       <Layout className="layout">
@@ -39,7 +39,7 @@ export default function LayoutHTML() {
             <Route path="/" element={<Navigate to="/home" />}></Route>
           </Routes>
         </Content>
-        <Footer className="footer">Footer</Footer>
+        {/* <Footer className="footer">Footer</Footer> */}
       </Layout>
     </>
   );

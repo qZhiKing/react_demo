@@ -4,12 +4,48 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  position: relative;
+  padding-top: 20px;
 }
 .main .left-fixed-tab {
-  width: 200px;
+  width: 180px;
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+.main .left-fixed-tab .fixed-tabs {
+  background-color: #fff;
+  padding: 8px 10px;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+.main .left-fixed-tab .fixed-tabs div {
+  padding: 8px 0;
+}
+.main .left-fixed-tab .fixed-tabs div:hover {
+  background-color: #f7f8fa;
+}
+.main .left-fixed-tab .fixed-tabs .active:hover,
+.main .left-fixed-tab .fixed-tabs .active {
+  background-color: #eaf2ff;
+  color: #1e80ff;
 }
 .main .center-container {
   width: 720px;
+  margin: 0 20px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.main .center-container .container-title {
+  border-bottom: 1px solid #e4e6eb;
+  padding: 16px 0px;
+  display: flex;
+  align-items: center;
+}
+.main .center-container .container-title .container-title-item {
+  margin: 0 16px;
 }
 .main .right-other {
   width: 260px;

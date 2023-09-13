@@ -4,11 +4,71 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  position: relative;
+  padding-top: 20px;
   .left-fixed-tab {
-    width: 200px;
+    width: 180px;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    .fixed-tabs {
+      background-color: #fff;
+      padding: 8px 10px;
+      border-radius: 4px;
+      text-align: center;
+      cursor: pointer;
+      div {
+        padding: 8px 0;
+      }
+      div:hover {
+        background-color: #f7f8fa;
+      }
+      .active:hover,
+      .active {
+        background-color: #eaf2ff;
+        color: #1e80ff;
+      }
+    }
   }
   .center-container {
     width: 720px;
+    margin: 0 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    .container {
+      border-bottom: 1px solid @maingray;
+      padding: 16px 20px 16px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .container-title {
+        display: flex;
+        .container-title-item {
+          margin: 0 16px;
+          color: @color-gray;
+          cursor: pointer;
+        }
+        .container-title-item:hover {
+          color: @fontActive !important;
+        }
+        .container-title-item.active {
+          color: #000;
+          position: relative;
+        }
+        .active::before {
+          display: block;
+          content: "";
+          position: absolute;
+          bottom: -1rem;
+          left: 30%;
+          width: 40%;
+          height: 3px;
+          background-color: @fontActive;
+          border-radius: 2px;
+        }
+      }
+    }
   }
   .right-other {
     width: 260px;
