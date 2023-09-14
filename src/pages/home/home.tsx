@@ -2,12 +2,14 @@
  * @Description:  HOME页面
  * @Author: qingZhiKing
  * @Date: 2023-06-15 14:27:11
- * @LastEditTime: 2023-09-13 15:13:07
+ * @LastEditTime: 2023-09-14 17:46:51
  * @LastEditors: qingZhiKing
  */
 import { useState } from "react";
 // import { useImmer } from "use-immer";
 import { Select } from "antd";
+import InfoBox from "../../components/InfoBox";
+
 import "./home.less";
 
 const tabList = [
@@ -29,9 +31,15 @@ const tabList1 = [
     name: "热门",
   },
 ];
-
-function FixedTabs() {
-  const [leftArr, setLeftArr]: Array<any> = useState(tabList);
+const tabList2 = [
+  {
+    name: "推荐",
+  },
+  {
+    name: "热门",
+  },
+];
+function FixedTabs({ leftArr }: any) {
   const [activeTab, setActiveTab] = useState(0);
   const handleTabClick = (data: object, key: number) => {
     setActiveTab(key);
@@ -55,8 +63,7 @@ function FixedTabs() {
   );
 }
 
-function Content() {
-  const [titleList, setTitleList]: Array<any> = useState(tabList1);
+function Content({ headTabs }: any) {
   const [activeTab, setActiveTab] = useState(0);
   const handleSetActiveTab = (key: number) => {
     setActiveTab(key);
@@ -64,11 +71,21 @@ function Content() {
   const handleChange = (value: string) => {
     console.log(`selected ${value}`);
   };
+  const infoBoxList = [
+    {
+      title: "写给前端的一句话",
+      content: "从Vue到React的过渡之路，快速上手React。",
+      author: "修够不会修狗",
+      view: "6923",
+      like: "125",
+    },
+  ];
+
   return (
     <>
       <div className="container">
         <div className="container-title">
-          {titleList.map((item: any, key: number) => {
+          {headTabs.map((item: any, key: number) => {
             return (
               <div
                 key={key}
@@ -91,17 +108,28 @@ function Content() {
           options={[{ value: "lucy", label: "Lucy" }]}
         />
       </div>
-      <div></div>
+      <div className="info-content">
+        {infoBoxList.map((item: any, key: number) => {
+          return <InfoBox key={key} info={item} />;
+        })}
+      </div>
     </>
   );
 }
 
 export default function Home() {
+  const [leftTabArr, setLeftTabArr]: Array<any> = useState(tabList);
+  const [centerTableArr, setCenterTableArr]: Array<any> = useState(tabList1);
+
   return (
     <>
       <div className="main">
-        <div className="left-fixed-tab"><FixedTabs /></div>
-        <div className="center-container"><Content /></div>
+        <div className="left-fixed-tab">
+          <FixedTabs leftArr={leftTabArr} />
+        </div>
+        <div className="center-container">
+          <Content headTabs={centerTableArr} />
+        </div>
         <div className="right-other">3</div>
       </div>
     </>
