@@ -2,7 +2,7 @@
  * @Description:  HOME页面
  * @Author: qingZhiKing
  * @Date: 2023-06-15 14:27:11
- * @LastEditTime: 2023-09-14 17:46:51
+ * @LastEditTime: 2023-09-15 09:33:04
  * @LastEditors: qingZhiKing
  */
 import { useState } from "react";
@@ -78,6 +78,16 @@ function Content({ headTabs }: any) {
       author: "修够不会修狗",
       view: "6923",
       like: "125",
+      tags: ["Vue", "React"],
+    },
+    {
+      title: "写给后端的一句话",
+      content: "从Vue到React的过渡之路，快速上手React。",
+      author: "修够不会修狗",
+      view: "6923",
+      like: "125",
+      img: true,
+      tags: ["Vue", "React"],
     },
   ];
 

@@ -1,8 +1,64 @@
-.info-box {
+.info {
   width: 100%;
   padding: 12px 20px 0;
-  .info-box {
+  .box {
+    width: 100%;
     display: flex;
+    border-bottom: 1px solid @maingray;
     padding-bottom: 12px;
+    .info-box {
+      flex: 1;
+      > :nth-child(1) {
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      > :nth-child(2) {
+        width: 100%;
+        font-size: 13px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-bottom: 4px;
+      }
+      > :nth-child(3) {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        > div:nth-child(1) > :nth-child(1) {
+          padding-right: 10px;
+          position: relative;
+        }
+        > div:nth-child(1) > :nth-child(1)::after {
+          content: "";
+          position: absolute;
+          top: 4px;
+          right: 0;
+          width: 1px;
+          height: 12px;
+          background-color: @border-gray;
+        }
+        > div:nth-child(1) > :nth-child(n + 2) {
+          padding: 0px 10px;
+        }
+        // > div:nth-child(2) {
+        // }
+      }
+    }
+    .info-img {
+      width: 102px;
+      height: 68px;
+      margin-left: 20px;
+      flex-shrink: 0;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+      }
+    }
   }
+}
+.info:hover {
+  background-color: @hover-bgc;
+  cursor: pointer;
 }

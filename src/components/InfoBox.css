@@ -1,8 +1,50 @@
-.info-box {
+.info {
   width: 100%;
   padding: 12px 20px 0;
-}
-.info-box .info-box {
   display: flex;
+}
+.info .info-box {
   padding-bottom: 12px;
+  flex: 1;
+}
+.info .info-box > :nth-child(1) {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.info .info-box > :nth-child(2) {
+  width: 100%;
+  font-size: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+.info .info-box > :nth-child(3) {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.info .info-box > :nth-child(3) > div > :nth-child(1) {
+  padding-right: 10px;
+  position: relative;
+}
+.info .info-box > :nth-child(3) > div > :nth-child(1)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 1px;
+  height: 10px;
+  background-color: ;
+}
+.info .info-img {
+  width: 102px;
+  height: 68px;
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+.info .info-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
 }
