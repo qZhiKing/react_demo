@@ -2,24 +2,19 @@
  * @Description:  HOME页面
  * @Author: qingZhiKing
  * @Date: 2023-06-15 14:27:11
- * @LastEditTime: 2023-09-15 09:33:04
+ * @LastEditTime: 2023-09-19 17:35:44
  * @LastEditors: qingZhiKing
  */
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import type { FC } from "react";
 // import { useImmer } from "use-immer";
-import { Select } from "antd";
+import { Select, Button } from "antd";
+import { getFixedTabs } from "../../mock/home";
 import InfoBox from "../../components/InfoBox";
 
 import "./home.less";
 
-const tabList = [
-  {
-    name: "前端",
-  },
-  {
-    name: "后端",
-  },
-];
+let tabList: any = [];
 const tabList1 = [
   {
     name: "推荐",
@@ -39,6 +34,13 @@ const tabList2 = [
     name: "热门",
   },
 ];
+const init = async () => {
+  const res: any = await getFixedTabs();
+  if (res.code === 200) {
+    tabList = res.data;
+  }
+};
+init();
 function FixedTabs({ leftArr }: any) {
   const [activeTab, setActiveTab] = useState(0);
   const handleTabClick = (data: object, key: number) => {
@@ -127,9 +129,37 @@ function Content({ headTabs }: any) {
   );
 }
 
-export default function Home() {
+function RightOther() {
+  let title = "";
+  const hour = new Date().getHours();
+  if (hour < 12) {
+    title = "上午好";
+  } else if (hour < 18) {
+    title = "下午好";
+  } else {
+    title = "晚上好";
+  }
+  const handleToSign = () => {
+    console.log("去签到");
+  };
+  return (
+    <>
+      <div className="tag_item tag_item1">
+        <div>
+          <span>{title}!</span>
+          <div className="tag_item1-title">点亮在社区的每一天</div>
+        </div>
+        <Button onClick={handleToSign}>去签到</Button>
+      </div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </>
+  );
+}
+const Home: FC = () => {
   const [leftTabArr, setLeftTabArr]: Array<any> = useState(tabList);
-  const [centerTableArr, setCenterTableArr]: Array<any> = useState(tabList1);
+  const [centerTabs, setCenterTabs]: Array<any> = useState(tabList1);
 
   return (
     <>
@@ -138,10 +168,14 @@ export default function Home() {
           <FixedTabs leftArr={leftTabArr} />
         </div>
         <div className="center-container">
-          <Content headTabs={centerTableArr} />
+          <Content headTabs={centerTabs} />
         </div>
-        <div className="right-other">3</div>
+        <div className="right-other">
+          <RightOther />
+        </div>
       </div>
     </>
   );
-}
+};
+
+export default Home;
