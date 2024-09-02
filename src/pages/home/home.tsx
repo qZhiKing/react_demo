@@ -2,7 +2,7 @@
  * @Description:  HOME页面
  * @Author: qingZhiKing
  * @Date: 2023-06-15 14:27:11
- * @LastEditTime: 2023-09-19 17:35:44
+ * @LastEditTime: 2023-11-14 09:31:40
  * @LastEditors: qingZhiKing
  */
 import { useState, useEffect } from "react";
@@ -160,7 +160,6 @@ function RightOther() {
 const Home: FC = () => {
   const [leftTabArr, setLeftTabArr]: Array<any> = useState(tabList);
   const [centerTabs, setCenterTabs]: Array<any> = useState(tabList1);
-
   return (
     <>
       <div className="main">

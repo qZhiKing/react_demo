@@ -38,15 +38,199 @@
   background-color: #fff;
   border-radius: 4px;
 }
-.main .center-container .container-title {
-  border-bottom: 1px solid #e4e6eb;
-  padding: 16px 0px;
+.main .center-container .container {
+  padding: 16px 20px 16px 0px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
-.main .center-container .container-title .container-title-item {
+.main .center-container .container .container-title {
+  display: flex;
+}
+.main .center-container .container .container-title .container-title-item {
   margin: 0 16px;
+  cursor: pointer;
+}
+.main .center-container .container .container-title .container-title-item.active {
+  color: #000;
+  position: relative;
+}
+.main .center-container .container .container-title .active::before {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 30%;
+  width: 40%;
+  height: 3px;
+  border-radius: 2px;
 }
 .main .right-other {
   width: 260px;
+}
+.main .right-other .tag_item {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+}
+.main .right-other .tag_item1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .right-other .tag_item1 > div {
+  display: flex;
+  flex-direction: column;
+}
+.main .right-other .tag_item1 > div .tag_item1-title {
+  font-size: 12px;
+  margin-top: 10px;
+}
+.main .right-other .tag_item1 > div > span {
+  font-weight: 700;
+}
+.element-plus-tree {
+  padding: 100px;
+}
+.element-plus-tree :deep(.el-tree) {
+  /* ---- ---- ---- ---- ^（节点对齐）---- ---- ---- ---- */
+  /* ---- ---- ---- ---- /（节点对齐）---- ---- ---- ---- */
+  /* ---- ---- ---- ---- ^（文字高亮）---- ---- ---- ---- */
+  /* ---- ---- ---- ---- /（文字高亮）---- ---- ---- ---- */
+  /* ---- ---- ---- ---- ^（新增辅助线）---- ---- ---- ---- */
+  /* ^ 树节点 */
+  /* / 树节点 */
+  /* ^ 第一层节点 */
+  /* / 第一层节点 */
+  /* ^ 叶子节点 */
+  /* / 叶子节点 */
+  /* ^ 设置子节点左外边距 */
+  /* / 设置子节点左外边距 */
+  /* ---- ---- ---- ---- /（新增辅助线）---- ---- ---- ---- */
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node {
+  /* ^ 所有节点 */
+  /* / 所有节点 */
+  /* ^ 已展开的父节点 */
+  /* / 已展开的父节点 */
+  /* ^ 叶子节点 */
+  /* / 叶子节点 */
+  /* ^ 复选框 */
+  /* / 复选框 */
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node i.el-tree-node__expand-icon {
+  padding: 6px;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node i.el-tree-node__expand-icon::before {
+  font-family: element-ui-icons;
+  font-style: normal;
+  content: "\e6d9";
+  color: #000000;
+  border: 1px solid #606266;
+  border-radius: 2px;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node i.el-tree-node__expand-icon svg {
+  display: none;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node i.el-tree-node__expand-icon.expanded {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node i.el-tree-node__expand-icon.expanded::before {
+  font-family: element-ui-icons;
+  font-style: normal;
+  content: "\e6d8";
+  color: #000000;
+  border: 1px solid #606266;
+  border-radius: 2px;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node i.el-tree-node__expand-icon.is-leaf::before {
+  display: none;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node .el-checkbox {
+  margin: 0 7px 0 2px;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node .el-checkbox .el-checkbox__inner {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border: 1px solid #bbb;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node .el-checkbox .el-checkbox__input.is-checked .el-checkbox__inner,
+.element-plus-tree :deep(.el-tree) .el-tree-node .el-checkbox .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+  border: 1px solid #5e7ce0;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node .el-tree-node__content small {
+  font-size: 13px;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node.is-current .el-tree-node__content small {
+  color: #5e7ce0;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node.is-current .el-tree-node__children small {
+  color: unset;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node {
+  position: relative;
+  width: auto;
+  padding-left: 13px;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node::before {
+  width: 1px;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: -38px;
+  bottom: 0;
+  left: 0;
+  right: auto;
+  border-width: 1px;
+  border-left: 1px solid #b8b9bb;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node::after {
+  width: 13px;
+  height: 13px;
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: auto;
+  top: 12px;
+  bottom: auto;
+  border-width: 1px;
+  border-top: 1px solid #b8b9bb;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node .el-tree-node__content {
+  position: relative;
+  z-index: 1;
+  color: #000;
+  padding-left: 0 !important;
+  /* ^ 复选框 */
+  /* / 复选框 */
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node .el-tree-node__content .el-checkbox {
+  margin: 0 10px 0 5.5px;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node .el-tree-node__children {
+  padding-left: 12px;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node:last-child::before {
+  height: 50px;
+}
+.element-plus-tree :deep(.el-tree) > .el-tree-node {
+  padding-left: 0;
+}
+.element-plus-tree :deep(.el-tree) > .el-tree-node::before {
+  border-left: none;
+}
+.element-plus-tree :deep(.el-tree) > .el-tree-node::after {
+  border-top: none;
+}
+.element-plus-tree :deep(.el-tree) i.el-tree-node__expand-icon.is-leaf {
+  display: none;
+}
+.element-plus-tree :deep(.el-tree) .el-tree-node__content:has(.is-leaf) {
+  margin-left: 25px !important;
 }

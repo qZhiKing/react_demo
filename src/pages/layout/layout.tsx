@@ -2,7 +2,7 @@
  * @Description:
  * @Author: qingZhiKing
  * @Date: 2023-08-01 11:28:23
- * @LastEditTime: 2023-09-12 15:19:26
+ * @LastEditTime: 2024-04-18 15:51:59
  * @LastEditors: qingZhiKing
  */
 import { Layout } from "antd";
@@ -22,6 +22,9 @@ export default function LayoutHTML() {
             </NavLink>
             <NavLink className="head-group-item" to="/content">
               文章
+            </NavLink>
+            <NavLink className="head-group-item" to="/write">
+              写作
             </NavLink>
           </div>
         </Header>

@@ -8,6 +8,7 @@
 
 import Home from "@/pages/home/home";
 import Content from "@/pages/content/content";
+import Write from "@/pages/write/wirte";
 
 const routes = [
   {
@@ -17,6 +18,10 @@ const routes = [
   {
     path: "/content",
     component: Content,
+  },
+  {
+    path: "/write",
+    component: Write,
   },
 ];
 export default routes;

@@ -2,7 +2,7 @@
  * @Description:
  * @Author: qingZhiKing
  * @Date: 2023-05-24 10:42:19
- * @LastEditTime: 2023-07-31 10:37:20
+ * @LastEditTime: 2024-06-19 11:29:00
  * @LastEditors: qingZhiKing
  */
 import { defineConfig } from "vite";
@@ -12,7 +12,7 @@ import { resolve } from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   root: process.cwd(),
-  base: "/react-demo/",
+  base: process.env.NODE_ENV === "development" ? "./react-demo/" : "./",
   plugins: [react()],
   resolve: {
     alias: {
@@ -30,6 +30,8 @@ export default defineConfig({
     },
   },
   server: {
+    host: "0.0.0.0",
+    open: true,
     port: 1128,
   },
   build: {
